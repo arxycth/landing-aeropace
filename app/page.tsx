@@ -15,27 +15,10 @@ import {
   Sparkles,
   Timer,
   Wind,
-  X,
   Zap,
 } from "lucide-react";
 
-const GITHUB_URL = "https://github.com/USERNAME/pacerApp";
-
-const DOWNLOAD_URL =
-  "https://github.com/USERNAME/pacerApp/releases/latest/download/AeroPace.apk";
-
-function GitHubIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-      className={className}
-    >
-      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.69-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.35.78 1.04.78 2.1v3.11c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
-    </svg>
-  );
-}
+const DOWNLOAD_URL = "/download/AeroPace.apk";
 
 function Logo() {
   return (
@@ -44,11 +27,9 @@ function Logo() {
         A
       </div>
 
-      <div>
-        <p className="text-[17px] font-extrabold tracking-[-0.03em] text-[#111827]">
-          AeroPace
-        </p>
-      </div>
+      <p className="text-[17px] font-extrabold tracking-[-0.03em] text-[#111827]">
+        AeroPace
+      </p>
     </div>
   );
 }
@@ -65,6 +46,7 @@ function PhoneFrame({
       className={`relative w-full max-w-[320px] rounded-[38px] border-[7px] border-[#101827] bg-[#f7f9fc] p-2 shadow-[0_30px_70px_rgba(15,23,42,0.15)] ${className}`}
     >
       <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-full bg-[#101827]" />
+
       <div className="overflow-hidden rounded-[29px]">
         {children}
       </div>
@@ -97,9 +79,10 @@ function HomePhone() {
         </div>
 
         <div className="mt-5 rounded-[22px] bg-[#0f172a] p-5 text-white shadow-[0_15px_35px_rgba(15,23,42,0.12)]">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-[#16c79a]" />
+
               <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-white/75">
                 Pace rekomendasi
               </span>
@@ -127,11 +110,12 @@ function HomePhone() {
 
           <div className="my-5 h-px bg-white/10" />
 
-          <div className="flex items-center justify-between text-[8px]">
+          <div className="flex items-center justify-between gap-2 text-[8px]">
             <div>
               <p className="uppercase tracking-[0.12em] text-white/40">
                 Target HR min
               </p>
+
               <p className="mt-1 text-sm font-bold">151 BPM</p>
             </div>
 
@@ -143,6 +127,7 @@ function HomePhone() {
               <p className="uppercase tracking-[0.12em] text-white/40">
                 Target HR max
               </p>
+
               <p className="mt-1 text-sm font-bold">164 BPM</p>
             </div>
           </div>
@@ -153,6 +138,7 @@ function HomePhone() {
             <h4 className="text-[16px] font-extrabold tracking-[-0.02em]">
               Kondisi Sekarang
             </h4>
+
             <p className="mt-0.5 flex items-center gap-1 text-[8px] text-[#8993a3]">
               <MapPin className="h-3 w-3" />
               Lokasi Anda
@@ -170,6 +156,7 @@ function HomePhone() {
 
             <div>
               <p className="text-[11px] font-bold">Cerah</p>
+
               <p className="text-[8px] text-[#9299a7]">
                 Kondisi cuaca saat ini
               </p>
@@ -192,7 +179,10 @@ function HomePhone() {
         <div className="mt-5">
           <div className="flex items-center gap-2">
             <HeartPulse className="h-4 w-4 text-[#159dcc]" />
-            <h4 className="text-[12px] font-extrabold">Dasar Rekomendasi</h4>
+
+            <h4 className="text-[12px] font-extrabold">
+              Dasar Rekomendasi
+            </h4>
           </div>
 
           <p className="mt-1 text-[8px] text-[#9299a7]">
@@ -200,25 +190,29 @@ function HomePhone() {
           </p>
 
           <div className="mt-3 rounded-[18px] border border-[#e2e6eb] bg-white p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#f3f6f9]">
                   <HeartPulse className="h-3.5 w-3.5 text-[#657182]" />
                 </div>
+
                 <div>
                   <p className="text-[9px] font-bold">Kebugaran</p>
+
                   <p className="text-[7px] text-[#98a0ad]">
                     Berdasarkan usia, RHR, dan BMI
                   </p>
                 </div>
               </div>
 
-              <span className="text-[9px] font-extrabold">6:12 /km</span>
+              <span className="text-[9px] font-extrabold">
+                6:12 /km
+              </span>
             </div>
 
             <div className="my-3 h-px bg-[#edf0f3]" />
 
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#f3f6f9]">
                   <CloudSun className="h-3.5 w-3.5 text-[#657182]" />
@@ -226,6 +220,7 @@ function HomePhone() {
 
                 <div>
                   <p className="text-[9px] font-bold">Kondisi cuaca</p>
+
                   <p className="text-[7px] text-[#98a0ad]">
                     Penyesuaian dari lingkungan
                   </p>
@@ -242,7 +237,7 @@ function HomePhone() {
                 Hasil rekomendasi
               </p>
 
-              <div className="mt-0.5 flex items-end justify-between">
+              <div className="mt-0.5 flex items-end justify-between gap-3">
                 <p className="text-[9px] text-[#2387a8]">
                   Pace aerobik yang lebih terkontrol
                 </p>
@@ -263,11 +258,12 @@ function RunPhone() {
   return (
     <PhoneFrame>
       <div className="min-h-[590px] bg-[#f8fafc] px-4 pb-5 pt-8 text-[#111827]">
-        <div className="flex items-start justify-between">
+        <div className="flex items-start justify-between gap-3">
           <div>
             <p className="text-[9px] font-bold tracking-[0.2em] text-[#159dcc]">
               AEROPACE
             </p>
+
             <h3 className="mt-1 text-[21px] font-extrabold tracking-[-0.04em]">
               Sedang Berlari
             </h3>
@@ -288,6 +284,7 @@ function RunPhone() {
             <span className="text-[58px] font-black leading-none tracking-[-0.06em] text-[#dd2525]">
               15:09
             </span>
+
             <span className="mb-1 text-[15px] font-semibold text-[#6d7685]">
               /km
             </span>
@@ -300,9 +297,10 @@ function RunPhone() {
         </div>
 
         <div className="mt-9 rounded-[22px] border border-[#e0e4e9] bg-white p-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <Gauge className="h-5 w-5 text-[#168eae]" />
+
               <p className="text-[12px] font-extrabold">
                 Estimasi Zona Aerobik
               </p>
@@ -318,7 +316,9 @@ function RunPhone() {
               <p className="text-[8px] font-bold uppercase tracking-[0.08em] text-[#a0a8b4]">
                 HR MIN
               </p>
+
               <p className="mt-1 text-[17px] font-black">151</p>
+
               <span className="text-[7px] text-[#98a1ae]">BPM</span>
             </div>
 
@@ -330,7 +330,9 @@ function RunPhone() {
               <p className="text-[8px] font-bold uppercase tracking-[0.08em] text-[#a0a8b4]">
                 HR MAX
               </p>
+
               <p className="mt-1 text-[17px] font-black">164</p>
+
               <span className="text-[7px] text-[#98a1ae]">BPM</span>
             </div>
           </div>
@@ -376,17 +378,26 @@ function RunPhone() {
             Lokasi terlacak
           </div>
 
-          <span className="text-[8px] font-bold text-[#8e98a6]">±5 m</span>
+          <span className="text-[8px] font-bold text-[#8e98a6]">
+            ±5 m
+          </span>
         </div>
 
-        <button className="mt-5 flex w-full items-center justify-center gap-3 rounded-[18px] bg-[#18a7dc] px-4 py-4 text-[13px] font-extrabold text-white shadow-[0_12px_25px_rgba(24,167,220,0.2)]">
+        <button
+          type="button"
+          className="mt-5 flex w-full items-center justify-center gap-3 rounded-[18px] bg-[#18a7dc] px-4 py-4 text-[13px] font-extrabold text-white shadow-[0_12px_25px_rgba(24,167,220,0.2)]"
+        >
           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#0b91c6]">
             <span className="ml-0.5 block h-0 w-0 border-y-[6px] border-l-[9px] border-y-transparent border-l-white" />
           </span>
+
           Pause
         </button>
 
-        <button className="mt-3 flex w-full items-center justify-center gap-2 rounded-[18px] border border-[#e0e4e8] bg-white px-4 py-4 text-[12px] font-bold text-[#738091]">
+        <button
+          type="button"
+          className="mt-3 flex w-full items-center justify-center gap-2 rounded-[18px] border border-[#e0e4e8] bg-white px-4 py-4 text-[12px] font-bold text-[#738091]"
+        >
           <span className="h-3 w-3 rounded-sm bg-[#738091]" />
           Selesai
         </button>
@@ -472,16 +483,17 @@ const faqs = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f8fafc] text-[#111827]">
-      {/* Soft background */}
+      {/* Background decoration */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[-180px] top-[500px] h-[400px] w-[400px] rounded-full bg-[#19a9df]/[0.055] blur-3xl" />
+
         <div className="absolute right-[-180px] top-[100px] h-[500px] w-[500px] rounded-full bg-[#17345a]/[0.035] blur-3xl" />
       </div>
 
-      {/* NAVBAR */}
+      {/* Navbar */}
       <header className="fixed inset-x-0 top-0 z-50">
         <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
-          <nav className="flex h-[68px] items-center justify-between rounded-2xl border border-[#e5eaf0] bg-white/85 px-4 shadow-[0_10px_35px_rgba(15,23,42,0.05)] backdrop-blur-xl sm:px-5">
+          <nav className="flex h-[68px] items-center justify-between rounded-2xl border border-[#e5eaf0] bg-white/90 px-4 shadow-[0_10px_35px_rgba(15,23,42,0.05)] backdrop-blur-xl sm:px-5">
             <a href="#" aria-label="AeroPace home">
               <Logo />
             </a>
@@ -509,20 +521,11 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="hidden items-center gap-2.5 sm:flex">
-              <a
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-[#e2e7ed] bg-white px-4 py-2.5 text-sm font-semibold text-[#344054] transition hover:bg-[#f7f9fb]"
-              >
-                <GitHubIcon className="h-4 w-4" />
-                GitHub
-              </a>
-
+            <div className="hidden items-center sm:flex">
               <a
                 href={DOWNLOAD_URL}
-                className="inline-flex items-center gap-2 rounded-xl bg-[#19a9df] px-4 py-2.5 text-sm font-bold text-white shadow-[0_8px_18px_rgba(25,169,223,0.18)] transition hover:bg-[#159dcc]"
+                download
+                className="inline-flex items-center gap-2 rounded-xl bg-[#19a9df] px-5 py-2.5 text-sm font-bold text-white shadow-[0_8px_18px_rgba(25,169,223,0.18)] transition hover:bg-[#159dcc]"
               >
                 <Download className="h-4 w-4" />
                 Download
@@ -557,13 +560,12 @@ export default function Home() {
                 </a>
 
                 <a
-                  href={GITHUB_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-[#344054] hover:bg-[#f7f9fb]"
+                  href={DOWNLOAD_URL}
+                  download
+                  className="mt-1 flex items-center gap-2 rounded-xl bg-[#19a9df] px-4 py-3 text-sm font-bold text-white"
                 >
-                  <GitHubIcon className="h-4 w-4" />
-                  GitHub
+                  <Download className="h-4 w-4" />
+                  Download AeroPace
                 </a>
               </div>
             </details>
@@ -571,7 +573,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO */}
+      {/* Hero */}
       <section className="px-4 pb-20 pt-36 sm:px-6 sm:pb-28 sm:pt-44 lg:px-8 lg:pt-48">
         <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
           <div className="max-w-2xl">
@@ -594,21 +596,21 @@ export default function Home() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href={DOWNLOAD_URL}
+                download
                 className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#19a9df] px-6 py-3.5 text-sm font-bold text-white shadow-[0_14px_28px_rgba(25,169,223,0.2)] transition hover:-translate-y-0.5 hover:bg-[#159dcc]"
               >
                 <Download className="h-4 w-4" />
                 Download AeroPace
+
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
 
               <a
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#features"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#dfe5eb] bg-white px-6 py-3.5 text-sm font-semibold text-[#344054] transition hover:border-[#cfd7df] hover:bg-[#fbfcfd]"
               >
-                <GitHubIcon className="h-4 w-4" />
-                View on GitHub
+                Explore Features
+                <ArrowRight className="h-4 w-4" />
               </a>
             </div>
 
@@ -630,11 +632,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* HERO VISUAL */}
+          {/* Hero phones */}
           <div className="relative flex min-h-[620px] items-center justify-center">
             <div className="absolute h-[450px] w-[450px] rounded-full bg-[#19a9df]/[0.07] blur-3xl" />
 
-            <div className="relative flex items-end justify-center gap-[-20px]">
+            <div className="relative flex items-end justify-center">
               <div className="relative z-10 hidden rotate-[-8deg] translate-y-8 lg:block">
                 <RunPhone />
               </div>
@@ -653,6 +655,7 @@ export default function Home() {
                     <p className="text-xs font-bold text-[#182131]">
                       Pace rekomendasi
                     </p>
+
                     <p className="mt-0.5 text-[10px] text-[#8a94a3]">
                       6:42 /km
                     </p>
@@ -670,6 +673,7 @@ export default function Home() {
                     <p className="text-xs font-bold text-[#182131]">
                       Zona aerobik
                     </p>
+
                     <p className="mt-0.5 text-[10px] text-[#8a94a3]">
                       Terkontrol
                     </p>
@@ -681,7 +685,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP */}
+      {/* Trust strip */}
       <section className="border-y border-[#e8ecf1] bg-white">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-4 py-7 sm:flex-row sm:px-6 lg:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#9aa3af]">
@@ -700,7 +704,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURES */}
+      {/* Features */}
       <section
         id="features"
         className="scroll-mt-28 px-4 py-24 sm:px-6 sm:py-28 lg:px-8"
@@ -749,7 +753,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCT EXPLANATION */}
+      {/* Recommendation explanation */}
       <section className="border-y border-[#e8ecf1] bg-white px-4 py-24 sm:px-6 sm:py-28 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-16 lg:grid-cols-[1fr_0.9fr] lg:gap-24">
@@ -838,13 +842,17 @@ export default function Home() {
 
                 <div className="my-7 h-px bg-white/10" />
 
-                <div className="flex items-end justify-between">
+                <div className="flex items-end justify-between gap-5">
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/35">
                       Target HR min
                     </p>
+
                     <p className="mt-2 text-xl font-black text-white">
-                      151 <span className="text-xs font-semibold text-white/45">BPM</span>
+                      151{" "}
+                      <span className="text-xs font-semibold text-white/45">
+                        BPM
+                      </span>
                     </p>
                   </div>
 
@@ -856,8 +864,12 @@ export default function Home() {
                     <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/35">
                       Target HR max
                     </p>
+
                     <p className="mt-2 text-xl font-black text-white">
-                      164 <span className="text-xs font-semibold text-white/45">BPM</span>
+                      164{" "}
+                      <span className="text-xs font-semibold text-white/45">
+                        BPM
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -867,6 +879,7 @@ export default function Home() {
                     <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-white/30">
                       Kebugaran
                     </p>
+
                     <p className="mt-2 text-sm font-bold text-white">
                       6:12 /km
                     </p>
@@ -876,6 +889,7 @@ export default function Home() {
                     <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-white/30">
                       Cuaca
                     </p>
+
                     <p className="mt-2 text-sm font-bold text-[#f0b63b]">
                       +30 dtk
                     </p>
@@ -887,7 +901,7 @@ export default function Home() {
                     Hasil rekomendasi
                   </p>
 
-                  <div className="mt-1 flex items-center justify-between">
+                  <div className="mt-1 flex items-center justify-between gap-3">
                     <p className="text-xs font-medium text-[#287d9c]">
                       Pace aerobik lebih terkontrol
                     </p>
@@ -903,7 +917,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
+      {/* How it works */}
       <section
         id="how-it-works"
         className="scroll-mt-28 px-4 py-24 sm:px-6 sm:py-28 lg:px-8"
@@ -932,7 +946,7 @@ export default function Home() {
               return (
                 <div
                   key={item.number}
-                  className="relative rounded-[26px] border border-[#e5e9ee] bg-white p-7"
+                  className="relative rounded-[26px] border border-[#e5e9ee] bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.06)]"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-black tracking-[0.16em] text-[#b1bac5]">
@@ -944,7 +958,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <h3 className="mt-8 text-base font-extrabold">
+                  <h3 className="mt-8 text-base font-extrabold text-[#182131]">
                     {item.title}
                   </h3>
 
@@ -958,7 +972,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* APP PREVIEW */}
+      {/* App preview */}
       <section className="overflow-hidden border-y border-[#e8ecf1] bg-[#f0f9fc] px-4 py-24 sm:px-6 sm:py-28 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-14 lg:grid-cols-[0.8fr_1.2fr]">
@@ -1025,7 +1039,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DOWNLOAD CTA */}
+      {/* Download */}
       <section
         id="download"
         className="scroll-mt-28 px-4 py-24 sm:px-6 sm:py-28 lg:px-8"
@@ -1036,7 +1050,7 @@ export default function Home() {
 
             <div className="relative">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#19a9df] text-white shadow-[0_12px_28px_rgba(25,169,223,0.2)]">
-                <Zap className="h-6 w-6" />
+                <Download className="h-6 w-6" />
               </div>
 
               <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#55c3ed]">
@@ -1052,25 +1066,20 @@ export default function Home() {
                 disesuaikan dengan kondisi Anda.
               </p>
 
-              <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+              <div className="mt-9">
                 <a
                   href={DOWNLOAD_URL}
+                  download
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#19a9df] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#159dcc]"
                 >
                   <Download className="h-4 w-4" />
                   Download AeroPace
                 </a>
-
-                <a
-                  href={GITHUB_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  <GitHubIcon className="h-4 w-4" />
-                  View source
-                </a>
               </div>
+
+              <p className="mt-6 text-xs text-white/30">
+                Android · APK · Free to download
+              </p>
             </div>
           </div>
         </div>
@@ -1091,7 +1100,10 @@ export default function Home() {
 
           <div className="mt-12 divide-y divide-[#e9edf1] overflow-hidden rounded-[26px] border border-[#e3e8ed] bg-white">
             {faqs.map((faq) => (
-              <details key={faq.question} className="group px-6 py-5 sm:px-7">
+              <details
+                key={faq.question}
+                className="group px-6 py-5 sm:px-7"
+              >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-sm font-bold text-[#182131] [&::-webkit-details-marker]:hidden">
                   <span>{faq.question}</span>
 
@@ -1107,7 +1119,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* Footer */}
       <footer className="border-t border-[#e6eaf0] bg-white">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
@@ -1140,16 +1152,6 @@ export default function Home() {
                 className="transition hover:text-[#111827]"
               >
                 Download
-              </a>
-
-              <a
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 transition hover:text-[#111827]"
-              >
-                <GitHubIcon className="h-3.5 w-3.5" />
-                GitHub
               </a>
             </div>
           </div>
